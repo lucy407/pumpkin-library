@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <h1> the pumpkin gallery! </h1>
+  <h1>the pumpkin gallery!</h1>
+  <a href="#baby-pumpkin">puppy pumpkin gallery</a>
 
   <div class="box">
     <h1>🎂 pumpkins birthday countdown 🎂</h1>
@@ -45,17 +46,24 @@
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
-      timer.textContent =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      timer.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
     update();
     setInterval(update, 1000);
   </script>
 
-  <img src="assets/1.png">
-  <img src="assets/2.png">
-  <img src="assets/3.png">
+  <script src="loading.js"></script>
+
+  <img src="assets/pumpkin normal/1.png">
+  <img src="assets/pumpkin normal/2.png">
+  <img src="assets/pumpkin normal/3.png">
+
+  <h1 id="baby-pumpkin">baby pumpkin</h1>
+
+  <img src="assets/baby pumpkin/b1.png">
+  <img src="assets/baby pumpkin/b2.png">
+  <img src="assets/baby pumpkin/b2.png"
 
   <footer>designed by @looptylucyloop on tiktok</footer>
   <footer>for by @luvr_safii on tiktok</footer>
