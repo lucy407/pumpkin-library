@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>the pumpkin gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1> the pumpkin gallery! </h1>
+
+  <div class="box">
+    <h1>🎂 pumpkins birthday countdown 🎂</h1>
+    <p id="timer">calculating time…</p>
+  </div>
+
+  <script>
+    function nextBirthday() {
+      const now = new Date();
+      let year = now.getFullYear();
+      const birthday = new Date(year, 9, 31, 0, 0, 0);
+
+      if (now > birthday) {
+        year++;
+      }
+
+      return new Date(year, 9, 31, 0, 0, 0);
+    }
+
+    const target = nextBirthday();
+    const timer = document.getElementById("timer");
+
+    function update() {
+      const now = new Date();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        timer.textContent = "happy birthday 🎉";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      timer.textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    update();
+    setInterval(update, 1000);
+  </script>
+
+  <img src="assets/1.png">
+  <img src="assets/2.png">
+  <img src="assets/3.png">
+
+  <footer>designed by @looptylucyloop on tiktok</footer>
+  <footer>for by @luvr_safii on tiktok</footer>
+</body>
+</html>
